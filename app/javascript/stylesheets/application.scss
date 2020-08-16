@@ -7,3 +7,8 @@
 /*! purgecss end ignore */
 
 @tailwind utilities;
+
+header {
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
+    position: sticky;
+}

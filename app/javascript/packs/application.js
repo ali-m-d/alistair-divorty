@@ -2,30 +2,53 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 
+require("trix");
 import "stylesheets/application"
+import "./projects.js"
+// import "../css/application.css";
+require("@rails/actiontext");
+
 
 document.addEventListener('DOMContentLoaded', function() {
-    let mouseCursor = document.querySelector('.cursor');
-    let navLinks = document.querySelectorAll('.nav-links li');
+    const sections = document.querySelectorAll('section');
+    const pill = document.querySelector('.pill');
+    const gradients = [
+        "linear-gradient(to top, #D9AFD9 0%, #97D9E1 100%)",
+        "linear-gradient(to top, #F4D03F 0%, #D9AFD9 100%)",
+        "linear-gradient(to top, #16A085 0%, #F4D03F 100%)"
+    ];
     
-    const cursor = (event) => {
-        mouseCursor.style.top = event.pageY + 'px';
-        mouseCursor.style.left = event.pageX + 'px';
+    const options = {
+        threshold: 0.4
     };
     
-    window.addEventListener('mousemove', cursor)
+    let observer = new IntersectionObserver(navCheck, options);
     
-    navLinks.forEach(link => {
-        link.addEventListener('mouseover', () => {
-            mouseCursor.classList.add('link-grow'); 
-            link.classList.add('hovered-link');
-        });
-    });
+    function navCheck(entries) {
+       entries.forEach(entry => {
+           const sectionId = entry.target.id;
+           const activeAnchor = document.querySelector(`[data-page=${sectionId}]`)
+           const gradientIndex = entry.target.getAttribute('data-index');
+           const coords = activeAnchor.getBoundingClientRect();
+           const directions = {
+               height: coords.height,
+               width: coords.width,
+               top: coords.top,
+               left: coords.left
+           }
+           
+           if (entry.isIntersecting) {
+               console.log("entry intersecting")
+               pill.style.setProperty('left', `${directions.left}px`);
+               pill.style.setProperty('top', `${directions.top}px`)
+               pill.style.setProperty('width', `${directions.width}px`)
+               pill.style.setProperty('height', `${directions.height}px`)
+               pill.style.background = gradients[gradientIndex]
+           }
+       }) 
+    }
     
-    navLinks.forEach(link => {
-        link.addEventListener('mouseleave', () => {
-            mouseCursor.classList.remove('link-grow'); 
-            link.classList.remove('hovered-link');
-        });
+    sections.forEach(section => {
+        observer.observe(section);
     });
 })

@@ -1,21 +1,25 @@
-<header class="mb-4">
-  <nav class="flex flex-row justify-center items-center px-3 py-3 text-gray-700 bg-gray-300 px-5 md:px-10 lg:px-20 nav">
-    <ul class="flex flex-row justify-evenly md:w-3/4 lg:w-1/2 items-stretch nav-links">
-      <li class="flex flex-col justify-center p-3">
-        <%= link_to "#", data: { page: "home" }, class: "font-bold leading-tight" do %>
+<header class="sticky top-0 z-0">
+  <nav class="flex flex-row items-center text-blue-900 px-5 md:px-10 lg:px-20 nav">
+    <div>
+      <h1 class="text-4xl font-bold header-name leading-tight pb-4 pt-2">Alistair Divorty</h1>
+    </div>
+    <ul class="flex flex-row justify-around items-stretch flex-grow nav-links lg:px-10 py-4">
+      <li class="flex flex-col justify-center">
+        <%= link_to "#home", data: { page: "home" }, class: "font-bold leading-tight z-30" do %>
           Home
         <% end %>
       </li>
-      <li class="flex flex-col justify-center p-3">
-        <%= link_to "#", data: { page: "projects" }, class: "font-bold leading-tight" do %>
+      <li class="flex flex-col justify-center">
+        <%= link_to "#projects", data: { page: "projects" }, class: "font-bold leading-tight z-30 nav-link" do %>
           Projects
         <% end %>
       </li>
-      <li class="flex flex-col justify-center p-3">
-        <%= link_to "#", data: { page: "contact" }, class: "font-bold leading-tight" do %>
-          Contacts
+      <li class="flex flex-col justify-center">
+        <%= link_to "#contact", data: { page: "contact" }, class: "font-bold leading-tight z-30" do %>
+          Contact
         <% end %>
       </li>
+      <div class="z-10 pill"></div>
     </ul>
   </nav>
 </header>

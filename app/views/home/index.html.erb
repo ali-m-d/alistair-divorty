@@ -1,13 +1,180 @@
-<main>
-    <section data-index="0" class="min-h-screen home">
-        <h2 class="text-2xl font-semibold">Home</h2>
-    </section>
+
+<section id="home" data-index="0" class="min-h-screen px-5 md:px-10 lg:px-20 home">
+    <div class="pt-20 md:px-20 lg:px-40">
+        
+        <h2 class="text-xl font-semibold text-blue-900 info">
+            Hi. My name is 
+        </h1>
+        <div class="text-6xl font-bold leading-snug pb-3 heading-gradient">
+            Alistair Divorty.
+        </div>
+        <h2 class="text-xl font-semibold text-blue-900 tracking-tight info">
+            I develop progressive web applications that utilize modern architectural patterns and incorporate responsive, aesthetical interfaces.
+        </h1>
+        
+        <div class="pt-8 flex flex-row justify-center">
+            <div class="grid grid-cols-3 gap-3">
+                <button class="rounded px-3 py-1 styled-btn w-24 font-semibold">
+                    CV
+                </button>
+                <%= link_to "#projects" do %>
+                    <button class="rounded p-3 py-1 styled-btn w-24 font-semibold">
+                        Projects
+                    </button>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" data-index="1" class="min-h-screen px-5 md:px-10 lg:px-20 projects">
+    <div class="flex flex-row justify-center">
+        <h2 class="text-4xl font-bold text-blue-800">Projects</h2>
+    </div>
     
-    <section data-index="1" class="min-h-screen projects">
-        <h2 class="text-2xl font-semibold">Projects</h2>
-    </section>
+    <div class="grid grid-cols-1 gap-5 pt-10 pb-5 px-16 lg:grid-cols-2">
+        <div id="project-1">
+            <h2 class="font-medium text-lg text-center p-1 mb-2 nav">WordFrequencyComparator</h2>
+            <nav class="bg-white mb-2 nav">
+                <ul id="project-1-tabs" class="tabs list-reset flex">
+                    <li class="active" data-tab="desktop">
+                        <%= link_to "#desktop", class: "text-sm tab flex items-center font-medium" do %>
+                        <%#= render inline: Rails.root.join('app/assets/images/calendar.svg').read %>
+                            Desktop
+                        <% end %>
+                    </li>
+                    <li data-tab="mobile">
+                        <%= link_to "#mobile", class: "text-sm tab flex items-center font-medium" do %>
+                            <%#= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
+                            Mobile
+                        <% end %>
+                    </li>
+                    <li data-tab="info">
+                        <%= link_to "#info", class: "text-sm tab flex items-center font-medium" do %>
+                            <%#= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
+                            Info
+                        <% end %>
+                    </li>
+                </ul>
+            </nav>
+            <div id="project-1-panels" class="bg-white">
+                <div id="project-1-desktop" class="tab-panel active">
+                    Desktop
+                </div>
+            <div class="bg-white">
+                <div id="project-1-mobile" class="tab-panel">
+                    Mobile
+                </div>
+                </div>
+                <div id="project-1-info" class="tab-panel">
+                    Info
+                </div>
+            </div>
+        </div> <!-- end of project 1 -->
+        
+        <div id="project-2">
+            <h2 class="font-medium text-lg text-center p-1 mb-2 nav">RecipeReactionReporter</h2>
+            <nav class="bg-white mb-2 nav">
+                <ul id="project-2-tabs" class="tabs list-reset flex">
+                    <li class="active" data-tab="desktop">
+                        <%= link_to "#desktop", class: "text-sm tab flex items-center font-medium" do %>
+                        <%#= render inline: Rails.root.join('app/assets/images/calendar.svg').read %>
+                            Desktop
+                        <% end %>
+                    </li>
+                    <li data-tab="mobile">
+                        <%= link_to "#mobile", class: "text-sm tab flex items-center font-medium" do %>
+                            <%#= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
+                            Mobile
+                        <% end %>
+                    </li>
+                    <li data-tab="info">
+                        <%= link_to "#info", class: "text-sm tab flex items-center font-medium" do %>
+                            <%#= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
+                            Info
+                        <% end %>
+                    </li>
+                </ul>
+            </nav>
+            <div id="project-2-panels" class="bg-white">
+                <div id="project-2-desktop" class="tab-panel active">
+                    Desktop
+                </div>
+            <div class="bg-white">
+                <div id="project-2-mobile" class="tab-panel">
+                    Mobile
+                </div>
+                </div>
+                <div id="project-2-info" class="tab-panel">
+                    Info
+                </div>
+            </div>
+        </div> <!-- end of project 2 -->
+    </div> <!-- end of grid -->
     
-    <section data-index="2" class="min-h-screen contact">
-        <h2 class="text-2xl font-semibold">Contact</h2>
-    </section>
-</main>
+    <div class="grid grid-cols-4">
+        <div id="project-3" class="lg:col-start-2 col-span-4 px-16 lg:col-span-2">
+            <h2 class="font-medium text-lg text-center p-1 mb-2 nav">MusicLessonScheduler</h2>
+            <nav class="bg-white mb-2 nav">
+                <ul id="project-3-tabs" class="tabs list-reset flex">
+                    <li class="active" data-tab="desktop">
+                        <%= link_to "#desktop", class: "text-sm tab flex items-center font-medium" do %>
+                        <%#= render inline: Rails.root.join('app/assets/images/calendar.svg').read %>
+                            Desktop
+                        <% end %>
+                    </li>
+                    <li data-tab="mobile">
+                        <%= link_to "#mobile", class: "text-sm tab flex items-center font-medium" do %>
+                            <%#= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
+                            Mobile
+                        <% end %>
+                    </li>
+                    <li data-tab="info">
+                        <%= link_to "#info", class: "text-sm tab flex items-center font-medium" do %>
+                            <%#= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
+                            Info
+                        <% end %>
+                    </li>
+                </ul>
+            </nav>
+            <div id="project-3-panels" class="bg-white">
+                <div id="project-3-desktop" class="tab-panel active">
+                    Desktop
+                </div>
+            <div class="bg-white">
+                <div id="project-3-mobile" class="tab-panel">
+                    Mobile
+                </div>
+                </div>
+                <div id="project-3-info" class="tab-panel">
+                    Info
+                </div>
+            </div>
+        </div> <!-- end of project 3 -->
+    </div>
+</section>
+
+<section id="contact" data-index="2" class="min-h-screen px-5 md:px-10 lg:px-20 contact">
+    <div class="flex flex-row justify-center">
+        <h2 class="text-4xl font-bold text-blue-800">Contact</h2>
+    </div>
+    <div class="max-w-lg mt-8 m-auto">
+        <div class="px-10 py-6 rounded bg-white">
+            <p class="text-lg font-semibold text-blue-800">Send me a message</h4>
+            <hr class="border mb-2" />
+
+            <%= form_for :message, url: new_message_path, method: "post", remote: true do |f| %>
+                <div class="relative">
+                    <%= f.label :email, "Email", class: "label mb-1" %>
+                    <%= f.email_field :email, class: "input mb-3", placeholder: "Your email address" %>
+                    <%= f.hidden_field :content, class: "input h-32 border border-gray-300 resize-none", placeholder: "Enter a message here" %>
+                
+                    <trix-editor input="message_content" id="message_content_trix" class="h-32 p-4"></trix-editor>
+            
+                    <%= f.submit "Send", class: "btn btn-small btn-teal block w-1/4 mt-2 text-center my-1 lg: mt-0 lg:text-left lg:mb-2 lg:mr-2 lg:w-auto lg:inline-flex" %>
+                    <div id="reply" class="text-indigo-700 font-semibold opacity-0 transition-opacity duration-1000"></div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</section>

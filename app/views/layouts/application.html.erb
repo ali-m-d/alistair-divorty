@@ -6,7 +6,8 @@
     <%= render "shared/flash_notice" %>
     <%= render "shared/header" %>
 
-    <main class="px-5 md:px-10 lg:px-20">
+    <main>
+      <%= render "shared/sidebars" %>
       <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
   </body>

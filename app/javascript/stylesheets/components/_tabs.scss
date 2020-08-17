@@ -1,0 +1,28 @@
+#project-1-tabs .active a, #project-2-tabs .active a, #project-3-tabs .active a {
+  @apply text-white;
+  background-color: #2A4365;
+}
+
+.tab {
+   @apply px-4 py-3 no-underline inline-block;
+   color: #2A4365;
+   transition: ease 0.2s all;
+   margin-bottom: -1px;
+
+   &:hover {
+    @apply text-white;
+    background-color: #2A4365;
+   }
+
+   &:active {
+      @apply text-white;
+   }
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}

@@ -1,11 +1,11 @@
 
-<section id="home" data-index="0" class="min-h-screen px-5 md:px-10 lg:px-20 home">
-    <div class="pt-20 md:px-20 lg:px-40">
+<section id="home" data-index="0" class="min-h-screen px-4 md:px-10 lg:px-20 home">
+    <div class="pt-2 md:pt-24 md:px-20 lg:px-40">
         
         <h2 class="text-xl font-semibold text-blue-900 info">
             Hi. My name is 
         </h1>
-        <div class="text-6xl font-bold leading-snug pb-3 heading-gradient">
+        <div class="text-2xl md:text-6xl font-bold leading-snug pb-3 heading-gradient">
             Alistair Divorty.
         </div>
         <h2 class="text-xl font-semibold text-blue-900 tracking-tight info">
@@ -13,13 +13,13 @@
         </h1>
         
         <div class="pt-8 flex flex-row justify-center">
-            <div class="grid grid-cols-3 gap-3">
-                <button class="rounded px-3 py-1 styled-btn w-24 font-semibold">
-                    CV
+            <div class="grid grid-cols-2 gap-3">
+                <button class="rounded px-3 py-2 styled-btn w-24 font-semibold">
+                    <div class="w-5 mx-auto styled-link">CV</div>
                 </button>
                 <%= link_to "#projects" do %>
-                    <button class="rounded p-3 py-1 styled-btn w-24 font-semibold">
-                        Projects
+                    <button class="rounded p-3 py-2 styled-btn w-24 font-semibold">
+                        <div class="styled-link">Projects</div>
                     </button>
                 <% end %>
             </div>
@@ -27,7 +27,7 @@
     </div>
 </section>
 
-<section id="projects" data-index="1" class="min-h-screen px-5 md:px-10 lg:px-20 projects">
+<section id="projects" data-index="1" class="min-h-screen px-4 md:px-10 lg:px-20 projects">
     <div class="flex flex-row justify-center">
         <h2 class="text-4xl font-bold text-blue-800">Projects</h2>
     </div>
@@ -59,7 +59,9 @@
             </nav>
             <div id="project-1-panels" class="bg-white">
                 <div id="project-1-desktop" class="tab-panel active">
-                    Desktop
+                    <a href="https://placeholder.com" style="max-width: 100%">
+                        <img src="https://via.placeholder.com/700x500.png?text=Desktop" style="max-width: 100%">
+                    </a>
                 </div>
             <div class="bg-white">
                 <div id="project-1-mobile" class="tab-panel">
@@ -98,7 +100,9 @@
             </nav>
             <div id="project-2-panels" class="bg-white">
                 <div id="project-2-desktop" class="tab-panel active">
-                    Desktop
+                    <a href="https://placeholder.com" style="max-width: 100%">
+                        <img src="https://via.placeholder.com/700x500.png?text=Desktop" style="max-width: 100%">
+                    </a>
                 </div>
             <div class="bg-white">
                 <div id="project-2-mobile" class="tab-panel">
@@ -139,7 +143,9 @@
             </nav>
             <div id="project-3-panels" class="bg-white">
                 <div id="project-3-desktop" class="tab-panel active">
-                    Desktop
+                    <a href="https://placeholder.com" style="max-width: 100%">
+                        <img src="https://via.placeholder.com/700x500.png?text=Desktop" style="max-width: 100%">
+                    </a>
                 </div>
             <div class="bg-white">
                 <div id="project-3-mobile" class="tab-panel">
@@ -154,7 +160,7 @@
     </div>
 </section>
 
-<section id="contact" data-index="2" class="min-h-screen px-5 md:px-10 lg:px-20 contact">
+<section id="contact" data-index="2" class="min-h-screen px-4 md:px-10 lg:px-20 pt-20 contact">
     <div class="flex flex-row justify-center">
         <h2 class="text-4xl font-bold text-blue-800">Contact</h2>
     </div>

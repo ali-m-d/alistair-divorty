@@ -1,25 +1,25 @@
 
-<section id="home" data-index="0" class="min-h-screen px-4 md:px-10 lg:px-20 home">
-    <div class="pt-2 md:pt-24 md:px-20 lg:px-40">
+<section id="home" data-index="0" class="min-h-screen px-16 md:px-10 lg:px-20 home">
+    <div class="pt-5 md:pt-24 md:px-20 lg:px-40">
         
-        <h2 class="text-xl font-semibold text-blue-900 info">
+        <h2 class="text-lg md:text-xl font-semibold text-blue-900 info">
             Hi. My name is 
-        </h1>
-        <div class="text-2xl md:text-6xl font-bold leading-snug pb-3 heading-gradient">
+        </h2>
+        <h1 class="pt-3 pb-5 text-4xl md:text-6xl font-bold leading-tight md:leading-snug heading-gradient">
             Alistair Divorty.
-        </div>
-        <h2 class="text-xl font-semibold text-blue-900 tracking-tight info">
-            I develop progressive web applications that utilize modern architectural patterns and incorporate responsive, aesthetical interfaces.
         </h1>
+        <h2 class="text-lg md:text-xl font-semibold text-blue-900 tracking-tight info">
+            I develop progressive web applications that utilize modern architectural patterns and incorporate responsive, aesthetical interfaces.
+        </h2>
         
-        <div class="pt-8 flex flex-row justify-center">
-            <div class="grid grid-cols-2 gap-3">
-                <button class="rounded px-3 py-2 styled-btn w-24 font-semibold">
-                    <div class="w-5 mx-auto styled-link">CV</div>
+        <div class="pt-10 flex flex-row justify-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <button class="rounded cta-btn w-24 text-xs font-bold">
+                    CV
                 </button>
                 <%= link_to "#projects" do %>
-                    <button class="rounded p-3 py-2 styled-btn w-24 font-semibold">
-                        <div class="styled-link">Projects</div>
+                    <button class="cta-btn rounded uppercase styled-btn w-24 text-xs font-bold">
+                        Projects
                     </button>
                 <% end %>
             </div>
@@ -27,30 +27,29 @@
     </div>
 </section>
 
-<section id="projects" data-index="1" class="min-h-screen px-4 md:px-10 lg:px-20 projects">
+<section id="projects" data-index="1" class="min-h-screen pt-10 px-12 md:px-10 lg:px-20 projects">
     <div class="flex flex-row justify-center">
         <h2 class="text-4xl font-bold text-blue-800">Projects</h2>
     </div>
     
-    <div class="grid grid-cols-1 gap-5 pt-10 pb-5 px-16 lg:grid-cols-2">
+    <div class="grid grid-cols-1 gap-5 pt-6 pb-5 md:px-16 lg:grid-cols-2">
         <div id="project-1">
-            <h2 class="font-medium text-lg text-center p-1 mb-2 nav">WordFrequencyComparator</h2>
-            <nav class="bg-white mb-2 nav">
+            <h2 class="font-medium text-sm md:text-lg text-center p-1 mb-2 l-blue-gradient">WordFrequencyComparator</h2>
+            <nav class="bg-white mb-2 l-blue-gradient">
                 <ul id="project-1-tabs" class="tabs list-reset flex">
                     <li class="active" data-tab="desktop">
-                        <%= link_to "#desktop", class: "text-sm tab flex items-center font-medium" do %>
-                        <%#= render inline: Rails.root.join('app/assets/images/calendar.svg').read %>
+                        <%= link_to "#desktop", class: "text-xs md:text-sm tab flex items-center font-medium" do %>
                             Desktop
                         <% end %>
                     </li>
                     <li data-tab="mobile">
-                        <%= link_to "#mobile", class: "text-sm tab flex items-center font-medium" do %>
+                        <%= link_to "#mobile", class: "text-xs md:text-sm tab flex items-center font-medium" do %>
                             <%#= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
                             Mobile
                         <% end %>
                     </li>
                     <li data-tab="info">
-                        <%= link_to "#info", class: "text-sm tab flex items-center font-medium" do %>
+                        <%= link_to "#info", class: "text-xs md:text-sm tab flex items-center font-medium" do %>
                             <%#= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
                             Info
                         <% end %>
@@ -59,39 +58,44 @@
             </nav>
             <div id="project-1-panels" class="bg-white">
                 <div id="project-1-desktop" class="tab-panel active">
-                    <a href="https://placeholder.com" style="max-width: 100%">
-                        <img src="https://via.placeholder.com/700x500.png?text=Desktop" style="max-width: 100%">
-                    </a>
+                    <%= link_to "#" do %>
+                        <%= image_tag "word-frequency-comparator-full-short.png", alt: "Word Frequency Comparator", class: "max-w-full" %>
+                    <% end %>
                 </div>
             <div class="bg-white">
                 <div id="project-1-mobile" class="tab-panel">
                     Mobile
                 </div>
                 </div>
-                <div id="project-1-info" class="tab-panel">
-                    Info
+                <div id="project-1-info" class="tab-panel font-medium text-xs leading-tight p-2 l-blue-gradient">
+                    <p class="pb-1">A single-page web application for comparing average word frequencies across folders of documents in order to 
+                    facilitate empirical analysis, built using Rails 6, JavaScript and PostgreSQL.</p>
+                    <p>Once a folder has been created, the user can populate it with documents by uploading a file in PDF format, or providing the URL
+                    for a webpage from which the text of the document will be scraped. The user initiates a comparison by selecting an arbitrary number
+                    of folders from the library they have created and inputting a search term. The application computes and visualizes the average frequency
+                    with which the search term appears in the documents contained in each folder.</p>
                 </div>
             </div>
         </div> <!-- end of project 1 -->
         
         <div id="project-2">
-            <h2 class="font-medium text-lg text-center p-1 mb-2 nav">RecipeReactionReporter</h2>
-            <nav class="bg-white mb-2 nav">
+            <h2 class="font-medium text-sm md:text-lg text-center p-1 mb-2 l-blue-gradient">RecipeReactionReporter</h2>
+            <nav class="bg-white mb-2 l-blue-gradient">
                 <ul id="project-2-tabs" class="tabs list-reset flex">
                     <li class="active" data-tab="desktop">
-                        <%= link_to "#desktop", class: "text-sm tab flex items-center font-medium" do %>
+                        <%= link_to "#desktop", class: "text-xs md:text-sm tab flex items-center font-medium" do %>
                         <%#= render inline: Rails.root.join('app/assets/images/calendar.svg').read %>
                             Desktop
                         <% end %>
                     </li>
                     <li data-tab="mobile">
-                        <%= link_to "#mobile", class: "text-sm tab flex items-center font-medium" do %>
+                        <%= link_to "#mobile", class: "text-xs md:text-sm tab flex items-center font-medium" do %>
                             <%#= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
                             Mobile
                         <% end %>
                     </li>
                     <li data-tab="info">
-                        <%= link_to "#info", class: "text-sm tab flex items-center font-medium" do %>
+                        <%= link_to "#info", class: "text-xs md:text-sm tab flex items-center font-medium" do %>
                             <%#= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
                             Info
                         <% end %>
@@ -116,25 +120,25 @@
         </div> <!-- end of project 2 -->
     </div> <!-- end of grid -->
     
-    <div class="grid grid-cols-4">
-        <div id="project-3" class="lg:col-start-2 col-span-4 px-16 lg:col-span-2">
-            <h2 class="font-medium text-lg text-center p-1 mb-2 nav">MusicLessonScheduler</h2>
-            <nav class="bg-white mb-2 nav">
+    <div class="grid grid-cols-4 md:px-16">
+        <div id="project-3" class="lg:col-start-2 col-span-4 lg:col-span-2">
+            <h2 class="font-medium text-sm md:text-lg text-center p-1 mb-2 l-blue-gradient">MusicLessonScheduler</h2>
+            <nav class="bg-white mb-2 l-blue-gradient">
                 <ul id="project-3-tabs" class="tabs list-reset flex">
                     <li class="active" data-tab="desktop">
-                        <%= link_to "#desktop", class: "text-sm tab flex items-center font-medium" do %>
+                        <%= link_to "#desktop", class: "text-xs md:text-sm tab flex items-center font-medium" do %>
                         <%#= render inline: Rails.root.join('app/assets/images/calendar.svg').read %>
                             Desktop
                         <% end %>
                     </li>
                     <li data-tab="mobile">
-                        <%= link_to "#mobile", class: "text-sm tab flex items-center font-medium" do %>
+                        <%= link_to "#mobile", class: "text-xs md:text-sm tab flex items-center font-medium" do %>
                             <%#= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
                             Mobile
                         <% end %>
                     </li>
                     <li data-tab="info">
-                        <%= link_to "#info", class: "text-sm tab flex items-center font-medium" do %>
+                        <%= link_to "#info", class: "text-xs md:text-sm tab flex items-center font-medium" do %>
                             <%#= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
                             Info
                         <% end %>
@@ -160,13 +164,13 @@
     </div>
 </section>
 
-<section id="contact" data-index="2" class="min-h-screen px-4 md:px-10 lg:px-20 pt-20 contact">
+<section id="contact" data-index="2" class="min-h-screen px-12 md:px-10 lg:px-20 py-20 contact">
     <div class="flex flex-row justify-center">
         <h2 class="text-4xl font-bold text-blue-800">Contact</h2>
     </div>
     <div class="max-w-lg mt-8 m-auto">
         <div class="px-10 py-6 rounded bg-white">
-            <p class="text-lg font-semibold text-blue-800">Send me a message</h4>
+            <p class="text-sm md:text-lg font-semibold text-blue-800">Send me a message</h4>
             <hr class="border mb-2" />
 
             <%= form_for :message, url: new_message_path, method: "post", remote: true do |f| %>
@@ -177,7 +181,7 @@
                 
                     <trix-editor input="message_content" id="message_content_trix" class="h-32 p-4"></trix-editor>
             
-                    <%= f.submit "Send", class: "btn btn-small btn-teal block w-1/4 mt-2 text-center my-1 lg: mt-0 lg:text-left lg:mb-2 lg:mr-2 lg:w-auto lg:inline-flex" %>
+                    <%= f.submit "Send", class: "btn btn-small btn-teal block w-20 mt-2 text-center my-1 lg: mt-0 lg:text-left lg:mb-2 lg:mr-2 lg:w-auto lg:inline-flex" %>
                     <div id="reply" class="text-indigo-700 font-semibold opacity-0 transition-opacity duration-1000"></div>
                 </div>
             <% end %>

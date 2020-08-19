@@ -9,6 +9,7 @@
 
 @tailwind utilities;
 @import 'trix/dist/trix.css';
+
 button {
     &:focus {
         outline: none;
@@ -17,7 +18,7 @@ button {
 header {
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
 }
-.nav {
+.l-blue-gradient {
     background: #E0EAFC;  /* fallback for old browsers */
     background: -webkit-linear-gradient(left, #CFDEF3, #E0EAFC);
     background: -moz-linear-gradient(left, #CFDEF3, #E0EAFC);
@@ -54,10 +55,7 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.styled-btn {
-    border: 2px solid #3f4c6b;
-    color: #3f4c6b;
-}
+
 .styled-link {
     position: relative;
 }
@@ -97,6 +95,17 @@ header {
     transform-origin: left;
 }
 
+.cta-btn {
+    border: 2px solid #3f4c6b;
+    color: #3f4c6b;
+    letter-spacing: .1em;
+    height: 2.2rem;
+    box-sizing: border-box;
+    transition: border-width 250ms ease-out;
+    &:hover {
+        border-width: 4px;
+    }
+}
 .home {
     background-color: #D9AFD9;
     background-image: -webkit-linear-gradient(bottom, #D9AFD9 0%, #97D9E1 100%);

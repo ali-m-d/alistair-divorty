@@ -44,29 +44,31 @@
                     </li>
                     <li data-tab="mobile">
                         <%= link_to "#mobile", class: "text-xs md:text-sm tab flex items-center font-medium" do %>
-                            <%#= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
                             Mobile
                         <% end %>
                     </li>
                     <li data-tab="info">
                         <%= link_to "#info", class: "text-xs md:text-sm tab flex items-center font-medium" do %>
-                            <%#= render inline: Rails.root.join('app/assets/images/diary.svg').read %>
                             Info
                         <% end %>
                     </li>
                 </ul>
             </nav>
-            <div id="project-1-panels" class="bg-white">
+            <div id="project-1-panels" class="bg-transparent">
                 <div id="project-1-desktop" class="tab-panel active">
                     <%= link_to "#" do %>
                         <%= image_tag "word-frequency-comparator-full-short.png", alt: "Word Frequency Comparator", class: "max-w-full" %>
                     <% end %>
                 </div>
-            <div class="bg-white">
-                <div id="project-1-mobile" class="tab-panel">
-                    Mobile
+            
+                <div id="project-1-mobile" style="height: 424px" class="tab-panel overflow-y-scroll">
+                   
+                    <%= link_to "#" do %>
+                        <%= image_tag "word-frequency-comparator-mobile.png", alt: "Word Frequency Comparator", class: "w-1/2 max-w-full overflow-y-scroll mx-auto" %>
+                    <% end %>
+                   
                 </div>
-                </div>
+            
                 <div id="project-1-info" class="tab-panel font-medium text-xs leading-tight p-2 l-blue-gradient">
                     <p class="pb-1">A single-page web application for comparing average word frequencies across folders of documents in order to 
                     facilitate empirical analysis, built using Rails 6, JavaScript and PostgreSQL.</p>

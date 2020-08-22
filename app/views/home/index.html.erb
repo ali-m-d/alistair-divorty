@@ -1,6 +1,6 @@
 
 <section id="home" data-index="0" class="min-h-screen px-16 md:px-10 lg:px-20 home">
-    <div class="pt-4 md:pt-16 md:px-20 lg:px-40">
+    <div class="pt-4 md:pt-10 md:px-20 lg:px-40">
         
         <h2 class="text-lg md:text-xl font-semibold text-blue-900 info">
             Hi. My name is 
@@ -12,11 +12,13 @@
             I develop progressive web applications that utilize modern architectural patterns and incorporate responsive, aesthetical interfaces.
         </h2>
         
-        <div class="pt-10 flex flex-row justify-center">
+        <div class="mt-6 md:mt-8 lg:mt-10 flex flex-row justify-center">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <button class="rounded cta-btn w-24 text-xs font-bold">
-                    CV
-                </button>
+                <%= link_to "https://drive.google.com/file/d/1Hn-yqU4cf5DnQ-8xceX-GtNdzp-R0ik6/view?usp=sharing" do %>
+                    <button class="rounded cta-btn w-24 text-xs font-bold">
+                        CV
+                    </button>
+                <% end %>
                 <%= link_to "#projects" do %>
                     <button class="cta-btn rounded uppercase styled-btn w-24 text-xs font-bold">
                         Projects
@@ -58,28 +60,37 @@
             </nav>
             <div id="project-1-panels" class="bg-transparent">
                 <div id="project-1-desktop" class="tab-panel active">
-                    <%= link_to "#" do %>
+                    <div id="project-1-image" class="max-w-full project-image z-20 relative">
                         <%= image_tag "word-frequency-comparator-full-short.png", alt: "Word Frequency Comparator", class: "max-w-full" %>
-                    <% end %>
+                        <%= link_to "#", id: "project-1-btn", class: "project-btn flex flex-row justify-center items-center z-30" do %>
+                            <div class="project-btn-label text-2xl">
+                                Launch
+                            </div>
+                        <% end %>
+                    </div>
                 </div>
             
                 <div id="project-1-mobile" style="height: 500px;" class="tab-panel overflow-y-scroll">
-                    <%= link_to "#" do %>
-                        <%= image_tag "word-frequency-comparator-mobile.png", alt: "Word Frequency Comparator", class: "w-1/2 max-w-full mx-auto" %>
+                    
+                    <%= link_to "#", class: "relative z-20 mobile-image" do %>
+                        <%= image_tag "word-frequency-comparator-mobile.png", alt: "Word Frequency Comparator", class: "max-w-full w-1/2 mx-auto" %>
                     <% end %>
+                    
                 </div>
             
                 <div id="project-1-info" class="tab-panel font-medium text-xs leading-tight p-2 l-blue-gradient">
                     <p class="mb-2">A single-page web application for comparing average word frequencies across folders of documents in order to 
                     facilitate empirical analysis, built using Rails 6, JavaScript and PostgreSQL.</p>
-                    <p class="mb-2">Once a folder has been created, the user can populate it with documents by uploading a file in PDF format, or providing the URL
+                    <p class="mb-2">The user initiates a comparison by selecting an arbitrary number
+                    of folders from the library they have created and inputting a search term. The application computes and visualizes the average frequency
+                    with which the search term appears in the documents contained in each folder.
+                    The application exploits the built-in full-text search functionality of the PostgreSQL RDBMS, and supports stemming.
+                    Visualization of the resulting data is achieved by means of the Google Charts API.</p>
+                    <p>Once a folder has been created, the user can populate it with documents by uploading a file in PDF format, or providing the URL
                     for a webpage from which the text of the document will be scraped. A method in the Document model validates the format of the uploaded
                     file by examining the Content-Type entity header. Further validations ensure the presence of a document title and
                     the presence of either a PDF file or a URL. The application utilizes Ajax to dynamically render newly created database records
-                    or errors thrown by the model validations without needing fetch the full page data from the server.<p>
-                    <p class="mb-2">The user initiates a comparison by selecting an arbitrary number
-                    of folders from the library they have created and inputting a search term. The application computes and visualizes the average frequency
-                    with which the search term appears in the documents contained in each folder.</p>
+                    or errors thrown by the model validations without needing to fetch the full page data from the server.<p>
                 </div>
             </div>
         </div> <!-- end of project 1 -->
@@ -110,9 +121,14 @@
             </nav>
             <div id="project-2-panels" class="bg-transparent">
                 <div id="project-2-desktop" class="tab-panel active">
-                    <%= link_to "#" do %>
-                        <%= image_tag "recipe-reaction-reporter-full.png", alt: "Recipe Reaction Reporter", class: "max-w-full" %>
-                    <% end %>
+                    <div id="project-2-image" class="max-w-full project-image z-20 relative">
+                        <%= image_tag "recipe-reaction-reporter-full.png", alt: "Recipe Reaction Reporter", class: "max-w-full" %>   
+                        <%= link_to "#", id: "project-2-btn", class: "project-btn flex flex-row justify-center items-center z-30" do %>
+                            <div class="project-btn-label text-2xl">
+                                Launch
+                            </div>
+                        <% end %>
+                    </div>
                 </div>
                 <div id="project-2-mobile" style="height: 500px" class="tab-panel overflow-y-scroll">
                     <%= link_to "#" do %>
@@ -121,7 +137,7 @@
                 </div>
                 <div id="project-2-info" class="tab-panel font-medium text-xs leading-tight p-2 l-blue-gradient">
                     <p class="mb-2">A web application that allows visitors to browse and contribute to an open database of recipes, and provides 
-                    logged-in users with the ability to report their reactions to recipes.</p>
+                    logged-in users with the ability to report their reactions to recipes, built using React, Rails 6 and PostgresQL.</p>
                     <p class="mb-2">The landing page features a call-to-action button that toggles a modal containing a registration form,
                     and a further call-to-action button that redirects the user to the paginated index of available recipes. Subtle
                     animations are achieved by means of React hooks and the GSAP library.</p>
@@ -172,9 +188,14 @@
             </nav>
             <div id="project-3-panels">
                 <div id="project-3-desktop" class="tab-panel active">
-                    <%= link_to "#" do %>
-                        <%= image_tag "music-lesson-scheduler-full.png", alt: "Music Lesson Scheduler", class: "max-w-full" %>
-                    <% end %>
+                    <div id="project-3-image" class="max-w-full project-image z-20 relative">
+                        <%= image_tag "music-lesson-scheduler-full.png", alt: "Music Lesson Scheduler", class: "max-w-full" %>  
+                        <%= link_to "#", id: "project-3-btn", class: "project-btn flex flex-row justify-center items-center z-30" do %>
+                            <div class="project-btn-label text-2xl">
+                                Launch
+                            </div>
+                        <% end %>
+                    </div>
                 </div>
                 <div id="project-3-mobile" style="height: 500px" class="tab-panel overflow-y-scroll">
                     <%= link_to "#" do %>
@@ -182,26 +203,16 @@
                     <% end %>
                 </div>
                 <div id="project-3-info" class="tab-panel font-medium text-xs leading-tight p-2 l-blue-gradient">
-                    <p class="mb-2">A web application that allows visitors to browse and contribute to an open database of recipes, and provides 
-                    logged-in users with the ability to report their reactions to recipes.</p>
-                    <p class="mb-2">The landing page features a call-to-action button that toggles a modal containing a registration form,
-                    and a further call-to-action button that redirects the user to the paginated index of available recipes. Subtle
-                    animations are achieved by means of React hooks and the GSAP library.</p>
-                    <p class="mb-2">Visitors can access the form for uploading a recipe of their own by following the link in the Navbar.
-                    The form accomodates an arbitrary number of ingredients by dynamically adding a text input field every time the
-                    Add Ingredient button is clicked. On the server side, the controller for the New Recipe action parses the form data sent 
-                    via the Fetch API and uploads the image provided by the user to a separate hosting platform, storing the URL necessary for 
-                    retrieval in the database.</p>
-                    <p class="mb-2">When components are mounted, a method in the App component makes a request to the Sessions controller in order to
-                    determine whether the user has been authenticated, and passes the loggedInStatus as props to the Navbar component, which
-                    displays either a Login or Logout button depending on the response from the server.
-                    <p class="mb-2">The Login button allows non-authenticated users to authenticate themselves at any time by toggling a modal containing
-                    a login form. Only authenticated users can access the form for reporting a reaction to a recipe by clicking the button
-                    in the view for individual recipes. New reactions are dynamically prepended to the list of reactions for the recipe 
-                    currently being viewed.</p>
-                    <p>When the user, after having viewed the details of an individual recipe, returns to the paginated list of recipes, they are
-                    presented with the page that they were previously browsing. This is achieved by lifitng the state of the Recipe component
-                    up to the App component by means of callback functions.</p>
+                    <p class="mb-2">Built using Rails 6, JavaScript and PostgresQL, for inclusion into a website owned by a music teacher, this application
+                    allows an authenticated user to schedule a lesson by picking a date and selecting a duration.</p>
+                    <p class="mb-2">This application utilizes the Stripe API to provide the user with the ability to pay for their lesson in advance
+                    using a credit or debit card. Once a lesson has been scheduled, an email confirming the lesson time and amount paid is
+                    dispatched to the user, and the user is presented with a summary of their booking and a form for leaving the teacher a message.
+                    The lesson summary view utilizes Ajax to dynamically render newly created messages without needing to fetch the full page data 
+                    from the server.</p>
+                    <p class="mb-2">A user wishing to view a summary of their upcoming lessons can visit the Dashboard and use tabbed navigation 
+                    to toggle between a calendar view and a list view.</p>
+                    <p class="mb-2">Administrator permissions allow the site owner to view lessons scheduled by all users.</p>
                 </div>
             </div>
         </div> <!-- end of project 3 -->

@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const projectImages = document.querySelectorAll('.project-image');
+    
+    projectImages.forEach(img => {
+        img.addEventListener('mouseover', (event) => {
+            let projectBtn = document.getElementById(event.target.id.replace('image', 'btn'));
+            projectBtn.style.opacity = "1";
+        });
+        img.addEventListener('mouseleave', (event) => {
+            let projectBtn = document.getElementById(event.target.id.replace('image', 'btn'));
+            projectBtn.style.opacity = "0";
+        });
+    });
+    
     // tab links
     const tabElements1 = document.querySelectorAll('.tab');
     
@@ -26,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
     }
     if(tabElements1 != null) {
-        tabElements1.forEach(function(tab) {
+        tabElements1.forEach(tab => {
             tab.addEventListener('click', (event) => {
                 onTabClick(event);
             });

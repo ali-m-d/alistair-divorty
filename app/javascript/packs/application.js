@@ -1,12 +1,13 @@
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
+require("@rails/actiontext");
 
-require("trix");
+import "trix";
 import "stylesheets/application"
 import "./projects.js"
 // import "../css/application.css";
-require("@rails/actiontext");
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section');

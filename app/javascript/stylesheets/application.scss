@@ -5,10 +5,10 @@
 @import "components/buttons";
 @import "components/forms";
 @import "components/tabs";
+@import 'trix/dist/trix.css';
 /*! purgecss end ignore */
 
 @tailwind utilities;
-@import 'trix/dist/trix.css';
 
 button {
     &:focus {

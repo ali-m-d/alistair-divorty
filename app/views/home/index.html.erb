@@ -153,8 +153,10 @@
                     a login form. Only authenticated users can access the form for reporting a reaction to a recipe by clicking the button
                     in the view for individual recipes. New reactions are dynamically prepended to the list of reactions for the recipe 
                     currently being viewed.</p>
+                    <p class="mb-2">To filter recipes by keyword, the user can utilize the search field in the Recipe index view. Searches are
+                    performed server-side against the name and ingredients columns of the Recipe model.</p>
                     <p>When the user, after having viewed the details of an individual recipe, returns to the paginated list of recipes, they are
-                    presented with the page that they were previously browsing. This is achieved by lifitng the state of the Recipe component
+                    presented with the subset of recipes that they were previously browsing. This is achieved by lifitng the state of the Recipe component
                     up to the App component by means of callback functions.</p>
                 </div>
             </div>
